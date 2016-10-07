@@ -2,8 +2,12 @@ require 'oauth'
 require 'json'
 require 'pp'
 require 'csv'
+require 'erb'
 require 'dotenv'
 Dotenv.load
+
+erb = ERB.new(File.open("github-milesgrimshaw-yelp.html.erb").read)
+puts erb.result
 
 consumer_key = ENV['CONSUMER_KEY']
 consumer_secret = ENV['CONSUMER_SECRET']
@@ -27,7 +31,7 @@ p access_token
 # "Cleveland", "Wichita", "Arlington", "New+Orleans", "Bakersfield", "Tampa", "Honolulu", "Anaheim", "Aurora", "Santa+Ana", "St.+Louis,MA", "Riverside", 
 # "Corpus+Christi", "Pittsburgh"
 # ]
-cities = ['oakland']
+cities = []
 
 segments = [
 "fitness+class", "bootcamp", "crossfit+gym", "yoga+class", "pilates+class", "martial+arts+class", "spin+class", 

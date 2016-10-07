@@ -30,11 +30,9 @@ gem 'jbuilder', '~> 2.5'
 # Yelp experiment
 gem 'yelp', require: 'yelp'
 
-# YouTube experiment
-require 'rubygems'
-gem 'google-api-client', '>0.7'
-require 'google/api_client'
-require 'trollop'
+gem 'oauth'
+
+gem 'dotenv'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

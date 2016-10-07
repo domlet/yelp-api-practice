@@ -1,6 +1,10 @@
+function tplawesome(e,t){res=e;for(var n=0;n<t.length;n++){res=res.replace(/\{\{(.*?)\}\}/g,function(e,r){return t[n][r]})}return res}
+
 $(function() {
   $('form').on('submit', function(e) {
     e.preventDefault();
+    console.log(gapi.client);
+    console.log($('#search').val());
     // prepare the request 
     var request = gapi.client.youtube.search.list({
       part: 'snippet',
@@ -13,6 +17,14 @@ $(function() {
     // execute the request
     request.execute(function(response) {
       console.log(response);
+      var results = response.result;
+      $.each(results.items, function(index, item) {
+        //use jquery to get partial html file, hereby known as data
+        $.get("tpl/item.html", function(data) {
+          $("#results").append(tplawesome(data, [{"title":item.snippet.title, "videoid":item.id.videoId}]));
+        });
+        // $("#results").append(item.id.videoId + " " + item.snippet.title + "<br>");
+      })
     });
   });
 });

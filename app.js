@@ -16,6 +16,7 @@ $(function() {
     });
     // execute the request
     request.execute(function(response) {
+      console.log(response);
       var results = response.result;
       $.each(results.items, function(index, item) {
         //use jquery to get partial html file, hereby known as data

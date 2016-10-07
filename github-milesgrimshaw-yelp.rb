@@ -35,6 +35,7 @@ segments = [
 ]
 
 
+
 CSV.open("yelp.csv", "wb") do |csv|
   row = Array.new
   row << "City"

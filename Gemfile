@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -26,6 +26,15 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
+
+# Yelp experiment
+gem 'yelp', require: 'yelp'
+
+# YouTube experiment
+require 'rubygems'
+gem 'google-api-client', '>0.7'
+require 'google/api_client'
+require 'trollop'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

@@ -19,7 +19,7 @@ $(function() {
 
 function init() {
   gapi.client.setApiKey('AIzaSyBx2DLpBph9YmHtRY9hUcaCR5U03gb2QPo')
-  gapit.client.load('youtube', 'v3', function() {
+  gapi.client.load('youtube', 'v3', function() {
     // yt api is ready
   });
 }

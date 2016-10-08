@@ -1,0 +1,9 @@
+<% @results.each do |result| %>
+<a href="<%= result['url'] %>">
+  <div class="item">
+   <h2><%= result[name] %></h2>
+   <p><%= result['location']['display_address'] %></p>
+   <p><%= result['location']['city'] %></p>
+ </div>
+</a>
+<% end %>

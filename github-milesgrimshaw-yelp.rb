@@ -2,6 +2,7 @@ require 'oauth'
 require 'json'
 require 'pp'
 require 'csv'
+require 'erb'
 require 'dotenv'
 Dotenv.load
 
@@ -15,10 +16,6 @@ api_host = 'api.yelp.com'
 consumer = OAuth::Consumer.new(consumer_key, consumer_secret, {:site => "http://#{api_host}"})
 access_token = OAuth::AccessToken.new(consumer, token, token_secret)
 
-
-p consumer
-p access_token
-
 # cities = [
 # "New+York", "Los+Angeles", "Chicago", "Houston", "Philadelphia", "Pheonix", "San+Antonio", "San+Diego", "Dallas", "San+Jose", "Austin", "Jacksonville",
 # "Indianapolis", "San+Francisco", "Columbus", "Fort+Worth", "Charlotte", "Detroit", "El+Paso", "Memphis", "Boston", "Seattle", "Denver", "Washington",
@@ -27,7 +24,7 @@ p access_token
 # "Cleveland", "Wichita", "Arlington", "New+Orleans", "Bakersfield", "Tampa", "Honolulu", "Anaheim", "Aurora", "Santa+Ana", "St.+Louis,MA", "Riverside", 
 # "Corpus+Christi", "Pittsburgh"
 # ]
-cities = ['oakland']
+cities = []
 
 segments = [
 "fitness+class", "bootcamp", "crossfit+gym", "yoga+class", "pilates+class", "martial+arts+class", "spin+class", 
